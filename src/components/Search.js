@@ -24,6 +24,8 @@ export const Search= ()=>{
     useEffect(()=>{
         if(data){
             setElement(true)
+            console.log(data)
+            console.log(data.length)
             console.log("succes!")
         }
     })
@@ -47,6 +49,8 @@ export const Search= ()=>{
                 </form>
 
                 {/*Berikut ini merupakan template untuk membuat book card, silakan diedit sesuai kebutuhan */}
+                {(data.length>0) 
+                ? <>
                 {data.map((data) =>{
                     let { title, subtitle, isbn13, price, image } = data;
 
@@ -64,6 +68,18 @@ export const Search= ()=>{
                     </div>
                     )
                 })}
+                </> 
+                :<>
+                <div className="card flex-row flex-wrap" style={{width:"48rem",marginTop:"50px"}} onClick={()=>{navigate(`/details/${isbn13}`)}}>
+                <div className="card-header border-0">
+                    <img src='/Open_book_nae_02.svg.png' alt="Buku.jpg" width="200" height="220" class="px-4"/>
+                </div>
+                <div className="card-block p-4" style={{width:"50%"}}>
+                    <h1 className="card-title">BOOK NOT FOUND :(</h1>
+                </div>
+                </div>
+
+                </>}
     
             </div>
         </div>

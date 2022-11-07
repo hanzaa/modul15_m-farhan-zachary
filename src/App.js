@@ -14,6 +14,12 @@ function App() {
         <Route path="/details/:isbn" element={<Details/>}></Route>
         <Route path="/search" element={<SearchBar/>}></Route>
         <Route path="/search/:query" element={<Search/>}></Route>
+        <Route path="*" element={
+          <div className="container">
+          <Header/>
+          <h1>PAGE NOT FOUND :(</h1>
+          </div>
+        }></Route>
       </Routes>
     </BrowserRouter>
 
