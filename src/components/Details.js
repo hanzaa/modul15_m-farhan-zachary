@@ -1,5 +1,5 @@
 import {useParams} from 'react-router-dom';
-import { Header } from './Header';
+import { Header } from "./Header";
 import axios from 'axios';
 import {useState,useEffect} from 'react';
 
@@ -36,9 +36,9 @@ export const Details = ()=>{
     return(
         <>
         {element ? <>
-
+        <Header/>
         <div className="container">
-            <Header/>
+  
             <div className="d-flex justify-content-end flex-column" style={{alignItems:"center"}}>
                 <h1 style={{width:"48rem",marginTop:"50px"}}>{data.title}</h1>
                 {/*Berikut ini merupakan template untuk informasi buku */}
@@ -69,3 +69,4 @@ export const Details = ()=>{
         </>
     )
 }
+
